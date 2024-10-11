@@ -45,6 +45,7 @@ t_timestamp	get_timestamp(void)
 	t_timestamp		timestamp;
 	long			*month_sec;
 	int				month;
+	int				hour;
 
 	gettimeofday(&now_time, NULL);
 	timestamp.year = 1970 + now_time.tv_sec / YEAR_SEC;
@@ -59,7 +60,11 @@ t_timestamp	get_timestamp(void)
 	free(month_sec);
 	timestamp.month = month;
 	timestamp.day = now_time.tv_sec / DAY_SEC;
-	timestamp.hour = now_time.tv_sec % DAY_SEC / HOUR_SEC + TIME_DIFFERENCE;
+	hour = now_time.tv_sec % DAY_SEC / HOUR_SEC;
+	if (hour + TIME_DIFFERENCE <= 0)
+		timestamp.hour = hour + 24 + TIME_DIFFERENCE;
+	else
+		timestamp.hour = hour + TIME_DIFFERENCE;
 	timestamp.minute = now_time.tv_sec % HOUR_SEC / MINUTE_SEC;
 	timestamp.second = now_time.tv_sec % MINUTE_SEC;
 	timestamp.millisecond = now_time.tv_usec / 1000;
