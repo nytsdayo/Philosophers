@@ -1,4 +1,4 @@
-# int ph_argment_check(t_arg const argment)
+# int ph_argument_check(t_arg const argument)
 ## 処理
 - 引数の数チェック(`argc_check`)
 - 引数が数値であるか(`argv_num_check`)
