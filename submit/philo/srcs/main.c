@@ -21,6 +21,9 @@ int	main(int argc, char **argv)
 
 	ret = ph_argument_check(argc, (const char**)argv);
 	if (ret != PH_VALID_ARG)
-		return (ph_print_error(ret), EXIT_FAILURE);
+	{
+		ph_print_error(ret);
+		return (EXIT_FAILURE);
+	}
 	return (EXIT_SUCCESS);
 }
