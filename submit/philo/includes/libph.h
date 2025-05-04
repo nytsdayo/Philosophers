@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   libph.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnakatan <rnakatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 16:36:01 by rnakatan          #+#    #+#             */
-/*   Updated: 2025/05/05 06:42:09 by rnakatan         ###   ########.fr       */
+/*   Created: 2025/05/04 17:57:43 by rnakatan          #+#    #+#             */
+/*   Updated: 2025/05/04 21:40:36 by rnakatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "argument_check.h"
-#include "ph_error.h"
-#include "libph.h"
-#include <stdlib.h>
+#ifndef LIBPH_H
+# define LIBPH_H
 
-int	main(int argc, char **argv)
-{
-	int		ret;
+# include <stddef.h>
 
-	ret = ph_argument_check(argc, (const char**)argv);
-	if (ret != PH_VALID_ARG)
-		return (ph_print_error(ret), EXIT_FAILURE);
-	return (EXIT_SUCCESS);
-}
+size_t	ph_strlen(const char *str);
+long	ph_atol(const char *nptr);
+void	ph_putendl_fd(const char *str, int fd);
+#endif

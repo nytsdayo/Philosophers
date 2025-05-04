@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ph_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnakatan <rnakatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 16:36:01 by rnakatan          #+#    #+#             */
-/*   Updated: 2025/05/05 06:42:09 by rnakatan         ###   ########.fr       */
+/*   Created: 2025/05/04 21:39:17 by rnakatan          #+#    #+#             */
+/*   Updated: 2025/05/05 06:37:25 by rnakatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "argument_check.h"
-#include "ph_error.h"
 #include "libph.h"
-#include <stdlib.h>
 
-int	main(int argc, char **argv)
+size_t	ph_strlen(const char *str)
 {
-	int		ret;
+	size_t	len;
 
-	ret = ph_argument_check(argc, (const char**)argv);
-	if (ret != PH_VALID_ARG)
-		return (ph_print_error(ret), EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+	len = 0;
+	while (*str)
+	{
+		len++;
+		str++;
+	}
+	return (len);
 }

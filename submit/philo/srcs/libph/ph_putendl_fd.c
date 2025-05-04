@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ph_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnakatan <rnakatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 16:36:01 by rnakatan          #+#    #+#             */
-/*   Updated: 2025/05/05 06:42:09 by rnakatan         ###   ########.fr       */
+/*   Created: 2025/05/04 17:55:22 by rnakatan          #+#    #+#             */
+/*   Updated: 2025/05/04 21:43:55 by rnakatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "argument_check.h"
-#include "ph_error.h"
+#include <unistd.h>
 #include "libph.h"
-#include <stdlib.h>
 
-int	main(int argc, char **argv)
+void	ph_putendl_fd(const char *str, int fd)
 {
-	int		ret;
-
-	ret = ph_argument_check(argc, (const char**)argv);
-	if (ret != PH_VALID_ARG)
-		return (ph_print_error(ret), EXIT_FAILURE);
-	return (EXIT_SUCCESS);
+	if (str)
+	{
+		write(fd, str, ph_strlen(str));
+		write(fd, "\n", 1);
+	}
 }
