@@ -6,7 +6,7 @@
 /*   By: rnakatan <rnakatan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 18:12:55 by rnakatan          #+#    #+#             */
-/*   Updated: 2025/05/04 21:38:53 by rnakatan         ###   ########.fr       */
+/*   Updated: 2025/05/05 07:11:08 by rnakatan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long	ph_atol(const char *nptr)
 		mnsflag = jugde_flag(nptr[i++]);
 	while (nptr[i] == '0')
 		i++;
-	if ((nptr[i] < '0' && nptr[i] > '9') || nptr[i] == '0')
+	if ((nptr[i] < '0' || nptr[i] > '9') || nptr[i] == '0')
 		return (0);
 	while ((nptr[i] >= '0' && nptr[i] <= '9'))
 	{
