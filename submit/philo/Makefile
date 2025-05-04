@@ -1,22 +1,21 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDE_DIR)
+
 
 NAME = philo
 
-SRCS_DIR = srcs/
-SRCS = $(wildcard $(SRCS_DIR)*.c)
+SRCS = $(shell find . -name "*.c")
 OBJS = $(SRCS:.c=.o)
 
-INCLUDE_DIR = includes/
+INCLUDE_DIR = ./includes 
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(LDFLAGS) -o $(NAME) $(OBJS)
 
 $(SRCS_DIR)/%.o: $(SRCS_DIR)/%.c
-	$(CC) $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
-
+	$(CC) $(CFLAGS) -o $@ $(INCLUDES) -c $<
 clean:
 	rm -f $(OBJS)
 

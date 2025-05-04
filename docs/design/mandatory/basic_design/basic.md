@@ -40,6 +40,8 @@ end
 - argv_validate_num_check
 	- argv[1-5]について、適切な値であるか判定
 	- 0以下は不適
+	- (要調査)一旦はINT_MIN以下に値を設定。
+		- 哲学者の数について、スレッドの特性を踏まえた制限を行うべき？
 
 ### dining_section
 - `dining_overview.md`に食事会の概要を記載している。
