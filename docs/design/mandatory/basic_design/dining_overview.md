@@ -23,8 +23,10 @@
 	- 食事が完了した際に最終食事時刻が更新される。
 	- 食事が終わったことを給仕に伝える。
 - 睡眠
-- 各哲学者が持つデータ
-	- each philosopher have same info about dining.
+	- 規定時間睡眠を行う
+	- 睡眠中に空腹時間がtime_to_dieに達してしまった場合、即座に死亡する。
+	- 睡眠終了後、思考状態へ移行する。
+- 各哲学者が持つデータ(each philosopher have same info about dining.)
 	- philosopher_info
 		- time_to_die
 		- time_to_sleep
