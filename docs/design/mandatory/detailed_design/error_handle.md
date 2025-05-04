@@ -1,4 +1,4 @@
-### argment_check
+### argument_check
 - argcが5か6でない時
 - argv(2~6番目)が適切な値でない時
 	- 数値でない場合
