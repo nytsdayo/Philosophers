@@ -2,7 +2,7 @@
 
 ## philo_action
 - `void *ph_philo_act(void *arg)`
-### descruprion
+### description
 - 下記の処理で順番を行う
 	- `ph_philo_thinking(t_philo_data philo_data)`
 	- `ph_philo_eating(t_philo_data philo_data)`
