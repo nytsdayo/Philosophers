@@ -8,7 +8,11 @@
 	- `ph_philo_eating(t_philo_data philo_data)`
 	- `ph_philo_sleeping(t_philo_data philo_data)`
 ### return value
-// 要定義
+- THINK_FINISH: Indicates that the philosopher has finished thinking.
+- EAT_FINISH: Indicates that the philosopher has finished eating.
+- SLEEP_FINISH: Indicates that the philosopher has finished sleeping.
+- CLOSE_DINING: Indicates that the dining session has been closed.
+- PHILO_DEAD: Indicates that the philosopher has died during one of the actions.
 
 ---
 ## ph_philo_thinking
