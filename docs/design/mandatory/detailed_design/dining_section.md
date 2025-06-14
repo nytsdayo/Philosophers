@@ -55,4 +55,4 @@
 
 ## ph_philo_act
 `void	*ph_philo_act(void *arg)`
-- 哲学者の食事行動
+- 哲学者の食事行動を表現する関数
