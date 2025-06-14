@@ -51,3 +51,43 @@ PHILO_DEAD
 - SLEEP_FINISH
 - CLOSE_DINING
 - PHILO_DEAD
+
+## その他必要な関数
+
+### ph_philo_pick_forks
+`ph_philo_pick_forks(t_philo_data philo_data)`
+#### description
+- 哲学者が両隣のフォークを取得する処理を行う。
+- フォークの取得に失敗した場合は待機またはリトライを行う。
+#### return value
+- SUCCESS: フォークの取得に成功した場合
+- PHILO_DEAD: 待機中に死亡した場合
+
+### ph_philo_release_forks
+`ph_philo_release_forks(t_philo_data philo_data)`
+#### description
+- 哲学者が使用したフォークを解放し、他の哲学者が利用できるようにする。
+#### return value
+- SUCCESS
+
+### ph_philo_check_death
+`ph_philo_check_death(t_philo_data philo_data)`
+#### description
+- 哲学者が死亡しているかどうかを判定する。
+#### return value
+- PHILO_DEAD: 死亡している場合
+- ALIVE: 生存している場合
+
+### ph_philo_update_last_meal
+`ph_philo_update_last_meal(t_philo_data philo_data)`
+#### description
+- 最終食事時刻を更新する。
+#### return value
+- SUCCESS
+
+### ph_philo_log_action
+`ph_philo_log_action(t_philo_data philo_data, philo_action action)`
+#### description
+- 哲学者の行動をログに記録する。
+#### return value
+- SUCCESS
