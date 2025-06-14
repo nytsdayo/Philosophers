@@ -2,7 +2,7 @@
 
 ## monitor_act
 `void *monitor_act(void *monitor_param)`
-### descprition
+### description
 - 下記の手順に従って処理を行う。
 	- 以下の条件になるまで、各哲学者の生存状態について確認を行う
 		- いずれかの哲学者が死亡する。
